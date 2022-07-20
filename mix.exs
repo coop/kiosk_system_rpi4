@@ -122,13 +122,20 @@ defmodule KioskSystemRpi4.MixProject do
 
   defp build_runner_opts() do
     # Download source files first to get download errors right away.
-    [make_args: primary_site() ++ ["source", "all", "legal-info"]]
+    [make_args: primary_site() ++ parallel_jobs() ++ ["source", "all", "legal-info"]]
   end
 
   defp primary_site() do
     case System.get_env("BR2_PRIMARY_SITE") do
       nil -> []
       primary_site -> ["BR2_PRIMARY_SITE=#{primary_site}"]
+    end
+  end
+
+  defp parallel_jobs do
+    case System.get_env("PARALLEL_JOBS") do
+      nil -> []
+      count -> ["PARALLEL_JOBS=#{count}"]
     end
   end
 
