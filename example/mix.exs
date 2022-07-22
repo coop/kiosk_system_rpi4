@@ -43,10 +43,7 @@ defmodule Example.MixProject do
 
       # Dependencies for specific targets
       {:kiosk_system_rpi4,
-       path: "~/Code/coop/kiosk_system_rpi4",
-       runtime: false,
-       targets: :rpi4,
-       nerves: [compile: true]}
+       github: "coop/kiosk_system_rpi4", tag: "v0.1.0", runtime: false, targets: :rpi4}
     ]
   end
 
