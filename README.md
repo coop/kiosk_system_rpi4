@@ -15,7 +15,7 @@ Then, change the rpi4 system dependency to `{:kiosk_system_rpi4, "~> 0.1.0"}
 ## Running the Kiosk
 
 The kiosk works by starting a
-[weston](https://github.com/wayland-project/weston) instance and then launching
+[weston](https://gitlab.freedesktop.org/wayland/weston) instance and then launching
 a [cog](https://github.com/Igalia/cog) browser inside weston at a designated
 url. Roughly it looks like this:
 
